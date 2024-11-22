@@ -1,0 +1,125 @@
+\documentclass{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath, amssymb, amsthm} 
+\usepackage[letterpaper, top=1in, bottom=1.0in, left=1.20in, right=1.20in,heightrounded]{geometry}
+
+\title{Mathematical Analysis Vol.1}
+\author{@Souez3}
+\date{22.11.2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Билет 1}
+\subsection{Последовательность}
+
+${f(n)}$ - последовательность задана на множестве N
+Когда каждому $n\in \mathds{N}$ поставлено в соответствие некоторого закона
+$a(n)\in \mathds{R}$, тогда говорят, что задана числовая последовательность ${a_n}^\inf$
+
+Примеры: 
+n-ный член арифметической прогрессии: $a_n = a_1 + \alpha(n-1)$
+геометрическая прогрессия: $b_n = b_1 * q^(n-1)$
+
+\subsection{Предел числовой последовательности}
+\textbf{Определение:} Число А называют пределом числовой
+последовательности ${X_n}$, если $\forall \epsilon > 0 \exists N(\epsilon) : \forall n > N(\epsilon)$ выполняется $|X_n-A| < \epsilon$
+
+\textbf{Определение:} Сходящаяся последовательность - последовательность, которая имеет конечный предел
+
+\textbf{Определение:} Расходящаяся последовательность - последовательность, которая имеет бесконечный предел либо предела не существует.
+
+Последовательноть ограничена, если $\exists M > 0 : \forall n \in \mathds{N}$ выполняется ${a_n} <= M$
+(существует такое число М, что для любого номера последовательности все члены последовательности не превосходят это число по модулю.
+
+\section{Билет 2}
+\subsection{Теорема о единственности предела последовательности}
+
+\textbf{Теорема:} Если у последовательности есть предел, то он единственный
+
+\textbf{Доказательство:} 
+Докажем от противного. Допустим существует 2 предела.
+\begin{equation}
+    $\sqsupset \lim_{x \to \infty}{X_n} = A$
+    $\sqsupset \lim_{x \to \infty}{X_n} = B$, при этом $B!=A$
+\end{equation}
+
+Тогда возьмем $\epsilon = (B-A)/3 > 0$, $(\epsilon_A \bigcap \epsilon_B != 0)$
+
+Следовательно
+\begin{equation}
+    Для $n >= N \exists номер N_1 : \forall n > N$ выполняется $|{X_n} - A| < \epsilon$
+\end{equation}
+ 
+\begin{equation}
+    Также $\exists N_2 для \forall_n >= N_2$ и тоже выполняется, что $|{X_n} - B| < \epsilon$
+\end{equation}
+Тогда $|a - b| = |a - {X_n} + {X_n} - b| <= |{X_n} - A| + {X_n} - B| < \epsilon + \epsilon = 2\epsilon = \frac{2*|A-B|}{3}$, тогда получим $|A-B| <= \frac{2}{3}*|B-A|$ 
+Получим противорчие
+
+\section{Билет 3}
+
+\textbf{Определение:} Последовательность ограничена, если $\exists M > 0 : \forall b \in \mathds{N}$ выполняется $|a_n| <= M$
+
+\textbf{Теорема об ограниченности сходящейся последовательности:} Всякая сходящаяся последовательность ограничена!
+
+\textbf{Доказательство:} $\sqsupset A = \lim_{n \to \infty}{X_n} \in \mathds{R}$, тогда и только тогда, когда $\forall \epsilon > 0 \exists N(\epsilon) \in mathds{N}$ такое что $\forall n \in mathds{N} : n > N(\epsilon)$ выполняется $|{X_n} - A| < \epsilon \forall n > N(\epsilon) {X_n} \in (A-\epsilon; A+\epsilon)$ содержит конечное число x_1,x_2,...x_k
+$\sqsupset m = min{X^-; A-\epsilon} и M = max{A-\epsilon; x^+}$ 
+Тогда на отрезке [m;M] находятся x_1,x_2,...x_k и (A-\epsilon;A+\epsilon) следовательно [m;M] содержат все точки {x_n}, то $\forall n \in mathds{N} x_n<=m x_n>=M$
+
+Примеры:
+\begin{equation}
+    1) ${\frac{1}{n^2}} = {1; \frac{1}{4}; \frac{1}{4}; \frac{1}{9}; \frac{1}{16}...}$ $\lim{\frac{1}{n^2}} = 0$ - ограничена сверху
+    2) ${\frac{n^2}{n+1}} = {\frac{1}{2}; \frac{4}{3}; \frac{9}{4}; \frac{16}{5};...}$ $\lim{\frac{n^2}{n+1}} >= \frac{1}{2}$ - ограничена снизу
+\end{equation}
+
+\section{Билет 4}
+Арифметические операции над сходящимися последовательностями
+
+$\sqsupset{X_n}; {Y_n}$ - две сходящиеся последовательности. Тогда $\exists \lim_{n \to \infty}{X_n} = A; \lim_{n \to \infty}{Y_n} = B$
+
+Cвойства
+1) ${X_n += Y_n}; {{X_n} * {Y_n}}; {\frac{X_n}{Y_n}}$ - тоже сходящиеся последовательности.
+2) $\lim_{n \to \infty}({X_n} + {Y_n}) = A+B$
+3) $\lim_{n \to \infty}({X_n} - {Y_n}) = A-B$
+4) $\lim_{n \to \infty}({X_n} * {Y_n}) = A*B$
+5) $\lim_{n \to \infty}\frac{X_n}{Y_n} = \frac{A}{B}$
+
+\textbf{Доказательство:} 
+1) $\forall N > 0 \existsN_0 : \forall n > N_0$ выполняется $|X_n - A| < \frac{\epsilon}{2}(любая окрестность)$
+$\exists N_1 : \forall n > N_1$ выполняется $|{Y_n}-B| < \frac{\epsilon}{2}$
+Пусть N = max(N_2; N_1), n > N
+Тогда $\forall n > N |({X_n}+{Y_n}) - (A+B)| = |{X_n}- A + {Y_n} - B| <= |{X_n}- A| + |{Y_n} - B| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$
+
+\section{Билет 5}
+\subsection{Понятие функции через последовательность}
+
+Если каждому $x \in X$ по некоторому закону поставлен в соответствии единственный y, то говорят что на множестве X задана функция f
+\begin{equation}
+    $\forall x \in X \exists! y \in \mathds{R} : f(x) = y$
+\end{equation}
+
+\subsection{Предел функции в точке}
+\textbf{Определение по Гейне:} $\sqsupset f(x)$ - определена в некоторой проколотой окрестности точки x
+\begin{equation}
+    $\lim _{x \to x_0}{f(x)} = A$ если $\forall {x_n} \exists \mathring{U}_x_0 > 0$
+
+    $\lim _{x \to x_0}{f(x) - g(x)} > 0$ => $f(x) - g(x) > 0$ по теореме если f(x) имеет предел A и в окрестности (а) принимает значения больше нуля, то A >= 0
+\end{equation}
+
+\subsection{Теорема о единственности предела} 
+Если функция имеет предел в точке, то он единственнй.
+
+Доказательство от противного:
+$\sqsupset \exists {X_n} = \lim _{n \to \infty}{X_n} = A$ и $\lim _{n \to \infty}{X_n} = B$, $A != B; A,B \in \mathds{R}$
+Возьмем $\epsilon_n \bigcap \epsilon_b != \empty$, тогда $|f(x) - A| < \frac{\epsilon}{2}; |f(x) - B| < \frac{\epsilon}{2}$
+$|A-B| = |A-B+f(x)-f(x)| = |A-f(x)+f(x)-B| <= |A-f(x)| + |B-f(x)| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$
+То есть получили $\forall \epsilon > 0 -> |A-B| < \epsilon$
+
+
+\end{document}
