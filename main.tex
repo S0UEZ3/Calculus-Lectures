@@ -121,5 +121,148 @@ $\sqsupset \exists {X_n} = \lim _{n \to \infty}{X_n} = A$ и $\lim _{n \to \inft
 $|A-B| = |A-B+f(x)-f(x)| = |A-f(x)+f(x)-B| <= |A-f(x)| + |B-f(x)| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$
 То есть получили $\forall \epsilon > 0 -> |A-B| < \epsilon$
 
+\section{Билет 6}
+
+\subsection{Ограниченная функция}
+
+\textbf{Определение:} Последовательность ограничена, если $\exists M > 0 : \forall b \in \mathds{N}$ выполняется $|a_n| <= M$
+
+\textbf{Определение:} Функция называется ограниченной сверху на x если $\exists M : \forall x \in X$ выполняется $F(x)<M$, снизу соответсвенно $F(x)>M$
+
+\textbf{Определение:} Теорема об ограниченности функции, имеющей предел (конечный)
+Если функция $f(x)$ определена в точке $x_0$ и имеет в точке конечный предел, то она ограничена в некоторой окрестности этой точки.
+
+\[
+\exists \lim_{x \to x_0} f(x) = A \iff \forall \varepsilon > 0 \, \exists \delta > 0 : \forall x \in \dot{U}(\delta),
+\]
+\[
+|x - x_0| < \delta \implies |f(x) - A| < \varepsilon.
+\]
+
+Пусть $\varepsilon = 1$, тогда $\forall x \in \dot{U}(\delta)$:
+
+\[
+|f(x) - A| < 1,
+\]
+
+раскрыв модуль:
+
+\[
+-1 < f(x) - A < 1.
+\]
+
+Отсюда:
+
+\[
+A - 1 < f(x) < A + 1 \implies f(x) \text{ ограничена}.
+\]
+
+\section{Билет 7}
+
+\subsection{Арифметические действия с пределами функции} 
+
+\[
+\lim_{x \to x_0} f(x) = A \quad \text{и} \quad \lim_{x \to x_0} \varphi(x) = B.
+\]
+
+Тогда:
+
+1. \[
+\lim_{x \to x_0} (f(x) + \varphi(x)) = A + B.
+\]
+
+2. \[
+\lim_{x \to x_0} C \cdot f(x) = C \cdot A, \quad \text{где } C = \text{const}.
+\]
+
+3. \[
+\lim_{x \to x_0} (f(x) \cdot \varphi(x)) = A \cdot B.
+\]
+
+4. Если $B \neq 0$, то:
+
+\[
+\lim_{x \to x_0} \frac{f(x)}{\varphi(x)} = \frac{A}{B}.
+\]
+
+Условие: $\forall x \in \operatorname{Dom}(\varphi) \quad \varphi(x) \neq 0$.
+
+\subsection*{Доказательство: Арифметическое свойство предела (Сумма)}
+
+\subsection*{Условие}
+\[
+\lim_{x \to x_0} f(x) = A \quad \text{и} \quad \lim_{x \to x_0} \varphi(x) = B.
+\]
+
+\subsection*{Доказательство}
+По определению предела:
+
+\[
+\lim_{x \to x_0} f(x) = A \iff \forall \varepsilon_1 > 0 \, \exists \delta_1 > 0 : \forall x \in \dot{U}(\delta_1),
+\]
+\[
+|x - x_0| < \delta_1 \implies |f(x) - A| < \varepsilon_1.
+\]
+
+\[
+\lim_{x \to x_0} \varphi(x) = B \iff \forall \varepsilon_2 > 0 \, \exists \delta_2 > 0 : \forall x \in \dot{U}(\delta_2),
+\]
+\[
+|x - x_0| < \delta_2 \implies |\varphi(x) - B| < \varepsilon_2.
+\]
+
+Пусть $\varepsilon = \varepsilon_1 + \varepsilon_2$, и $\delta = \min(\delta_1, \delta_2)$. Тогда:
+
+\[
+|f(x) + \varphi(x) - (A + B)| = |f(x) - A + \varphi(x) - B| \leq |f(x) - A| + |\varphi(x) - B|.
+\]
+
+Из условий следует:
+
+\[
+|f(x) - A| < \varepsilon_1 \quad \text{и} \quad |\varphi(x) - B| < \varepsilon_2.
+\]
+
+Таким образом:
+
+\[
+|f(x) + \varphi(x) - (A + B)| < \varepsilon_1 + \varepsilon_2 = \varepsilon.
+\]
+
+\subsection*{Вывод}
+\[
+\lim_{x \to x_0} (f(x) + \varphi(x)) = A + B.
+\]
+
+\textbf{Теорема о суперпозиции}
+
+1) \( f(x) и g(x) \): \( F(x) = F(f(g(x))) \)
+
+2) \( \lim_{x \to x_0} g(x) = A \)
+
+3) \( \lim_{x \to x_0} f(x) = B \)
+
+Следовательно:
+\[
+\lim_{x \to x_0} F(f(g(x))) = B
+\]
+
+\section{Билет 8}
+Рассмотрим неравенство:
+\[
+a_n \leq b_n
+\]
+
+Пусть \( \lim_{n \to \infty} a_n = A \) и \( \lim_{n \to \infty} b_n = B \). Тогда, если \( a_n \leq b_n \) для всех \( n \), то по свойству пределов:
+\[
+\lim_{n \to \infty} a_n \leq \lim_{n \to \infty} b_n
+\]
+
+Следовательно:
+\[
+A \leq B
+\]
+
+
 
 \end{document}
