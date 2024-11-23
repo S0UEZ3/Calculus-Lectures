@@ -116,10 +116,306 @@ $\exists N_1 : \forall n > N_1$ выполняется $|{Y_n}-B| < \frac{\epsil
 Если функция имеет предел в точке, то он единственнй.
 
 Доказательство от противного:
-$\sqsupset \exists {X_n} = \lim _{n \to \infty}{X_n} = A$ и $\lim _{n \to \infty}{X_n} = B$, $A != B; A,B \in \mathds{R}$
+$\sqsupset \exists {X_n} = \lim_{n \to \infty}{X_n} = A$ и $\lim_{n \to \infty}{X_n} = B$, $A != B; A,B \in \mathds{R}$
 Возьмем $\epsilon_n \bigcap \epsilon_b != \empty$, тогда $|f(x) - A| < \frac{\epsilon}{2}; |f(x) - B| < \frac{\epsilon}{2}$
 $|A-B| = |A-B+f(x)-f(x)| = |A-f(x)+f(x)-B| <= |A-f(x)| + |B-f(x)| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon$
 То есть получили $\forall \epsilon > 0 -> |A-B| < \epsilon$
 
+\section{Билет 6}
+
+\subsection{Ограниченная функция}
+
+\textbf{Определение:} Функция ограничена, если $\exists M > 0 : \forall x \in \mathds{X}$ выполняется $|f(x)| <= M$
+
+\textbf{Определение:} Функция называется ограниченной сверху на x если $\exists M : \forall x \in X$ выполняется $F(x)<M$
+
+\textbf{Определение:} Функция называется ограниченной снизу на x если $\exists M : \forall x \in X$ выполняется $F(x)>M$
+
+\subsubsection{Теорема об ограниченности функции, имеющей предел (конечный)}
+Если функция $f(x)$ определена в точке $x_0$ и имеет в точке конечный предел, то она ограничена в некоторой окрестности этой точки.
+
+\[
+\exists \lim_{x \to x_0} f(x) = A \iff \forall \varepsilon > 0 \, \exists \delta > 0 : \forall x \in \dot{U}(\delta),
+\]
+\[ 
+|x - x_0| < \delta \implies |f(x) - A| < \varepsilon.
+\]
+
+Пусть $\varepsilon = 1$, тогда $\forall x \in \dot{U}(\delta)$:
+
+\[
+|f(x) - A| < 1,
+\]
+
+раскрыв модуль:
+
+\[
+-1 < f(x) - A < 1.
+\]
+
+Отсюда:
+
+\[
+A - 1 < f(x) < A + 1 \implies f(x) \text{ ограничена}.
+\]
+
+\section{Билет 7}
+
+\subsection{Арифметические действия с пределами функции} 
+
+\[
+\lim_{x \to x_0} f(x) = A \quad \text{и} \quad \lim_{x \to x_0} \varphi(x) = B.
+\]
+
+Тогда:
+
+1. \[
+\lim_{x \to x_0} (f(x) + \varphi(x)) = A + B.
+\]
+
+2. \[
+\lim_{x \to x_0} C \cdot f(x) = C \cdot A, \quad \text{где } C = \text{const}.
+\]
+
+3. \[
+\lim_{x \to x_0} (f(x) \cdot \varphi(x)) = A \cdot B.
+\]
+
+4. Если $B \neq 0$, то:
+
+\[
+\lim_{x \to x_0} \frac{f(x)}{\varphi(x)} = \frac{A}{B}.
+\]
+
+Условие: $\forall x \in \operatorname{Dom}(\varphi) \quad \varphi(x) \neq 0$.
+
+\subsection*{Доказательство: Арифметическое свойство предела (Сумма)}
+
+\subsection*{Условие}
+\[
+\lim_{x \to x_0} f(x) = A \quad \text{и} \quad \lim_{x \to x_0} \varphi(x) = B.
+\]
+
+\subsection*{Доказательство}
+По определению предела:
+
+\[
+\lim_{x \to x_0} f(x) = A \iff \forall \varepsilon_1 > 0 \, \exists \delta_1 > 0 : \forall x \in \dot{U}(\delta_1),
+\]
+\[
+|x - x_0| < \delta_1 \implies |f(x) - A| < \varepsilon_1.
+\]
+
+\[
+\lim_{x \to x_0} \varphi(x) = B \iff \forall \varepsilon_2 > 0 \, \exists \delta_2 > 0 : \forall x \in \dot{U}(\delta_2),
+\]
+\[
+|x - x_0| < \delta_2 \implies |\varphi(x) - B| < \varepsilon_2.
+\]
+
+Пусть $\varepsilon = \varepsilon_1 + \varepsilon_2$, и $\delta = \min(\delta_1, \delta_2)$. Тогда:
+
+\[
+|f(x) + \varphi(x) - (A + B)| = |f(x) - A + \varphi(x) - B| \leq |f(x) - A| + |\varphi(x) - B|.
+\]
+
+Из условий следует:
+
+\[
+|f(x) - A| < \varepsilon_1 \quad \text{и} \quad |\varphi(x) - B| < \varepsilon_2.
+\]
+
+Таким образом:
+
+\[
+|f(x) + \varphi(x) - (A + B)| < \varepsilon_1 + \varepsilon_2 = \varepsilon.
+\]
+
+\subsection*{Вывод}
+\[
+\lim_{x \to x_0} (f(x) + \varphi(x)) = A + B.
+\]
+
+\subsection*{Теорема о суперпозиции}
+
+1) \( f(x)\) и \(g(x)\) : \( F(x) = F(f(g(x))) \)
+
+2) \( \lim_{x \to x_0} g(x) = A \)
+
+3) \( \lim_{x \to x_0} f(x) = B \)
+
+Следовательно:
+\[
+\lim_{x \to x_0} F(f(g(x))) = B
+\]
+
+\textbf{Доказательство:}
+\(
+    \sqsupset x = Dom(g); y = Dom(f)
+\)
+Тогда по определению предела
+\(
+    \lim_{x \to x_0} g(x) = A \iff \forall \varepsilon_1 > 0 \exists \delta_1 > 0 : \forall x \in \dot{U}(\delta_1)
+\)
+\(
+    |g(x) - A| < \varepsilon
+\)
+\(
+    \lim_{y \to A} f(y) = B \iff \forall \varepsilon_2 > 0 \exists \varepsilon_1 > 0 : \forall y \in \dot{U}(A)
+\)
+\(
+    |f(y) - B| < \varepsilon_2
+\)
+Следовательно:
+\(
+    \forall \varepsilon_2 > 0 \exists \dot{U}_\delta (x_0) > 0 : \forall x \in \dot{U}_\delta (x_0) \implies f(g(x)) \in \dot{U}_\varepsilon_2 (B) \implies B = \lim_{x \to \x_0} f(g(x))
+\)
+\(
+    |f(g(x)) - B| < \varepsilon_2 \implies B = \lim_{x \to x_0} f(g(x))
+\)
+
+\section{Билет 8}
+
+\subsection*{Теоремы о пределах функции: о предельном переходе в неравенство}
+
+Рассмотрим неравенство:
+\[
+a_n \leq b_n
+\]
+Пусть \( \lim_{n \to \infty} a_n = A \) и \( \lim_{n \to \infty} b_n = B \). Тогда, если \( a_n \leq b_n \) для всех \( n \), то по свойству пределов:
+\[
+\lim_{n \to \infty} a_n \leq \lim_{n \to \infty} b_n
+\]
+
+Следовательно:
+\[
+A \leq B
+\]
+
+\textbf{Доказательство от противного:}
+\(
+    \sqsupset A > B
+\)
+Тогда 
+\(
+    \lim_{x \to x_0} (f(x) - g(x)) = A - B > 0
+\)
+Из арифметических свойств пределов следует:
+\(
+    f(x) - g(x) > 0 \implies f(x) > g(x)
+\)
+Это противоречит условию $f(x) <= g(x)$
+
+\subsection*{Теорема о сжатой функции}
+
+
+\subsection*{Теорема о сжатой функции}
+Пусть \( f(x) \), \( g(x) \) и \( h(x) \) — функции, определенные на множестве \( E \subset \mathbb{R} \) и выполняется неравенство
+\[
+f(x) \leq h(x) \leq g(x),
+\]
+и при этом
+\[
+\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = b,
+\]
+то
+\[
+\lim_{x \to a} h(x) = b.
+\]
+
+\textbf{Доказательство:}
+\begin{equation}
+    \lim_{x \to x_0} f(x) = \lim_{x \to x_0} h(x) = C
+\end{equation}
+Тогда:
+\begin{equation}
+    \forall \varepsilon_1 > 0 \exists \dot{U}_f (x_0) : \forall x \in \dot{U}_f (x_0)
+\end{equation}
+\begin{equation}
+    |f(x) - C| < \varepsilon_1 \implies -\varepsilon_1 < f(x) - C < \varepsilon_1 \implies C - \varepsilon_1 < f(x) < \varepsilon_1 + C
+\end{equation}
+
+\begin{equation}
+    \lim_{x \to x_0} h(x) = C
+\end{equation}
+\begin{equation}
+    \forall \varepsilon_2 > 0 \exists \dot{U}_h (x_0) : \forall x \in \dot{U}_h (x_0)
+\end{equation}
+\begin{equation}
+    |h(x) - C| < \varepsilon_2 \implies -\varepsilon_2 < h(x) - C < \varepsilon_2 \implies C - \varepsilon_2 < h(x) < \varepsilon_2 + C
+\end{equation}
+
+\begin{equation}
+    f(x) <= g(x) <= h(x) \implies C-\varepsilon_1 < f(x) <= g(x) <= h(x) < \varepsilon_2 + C
+\end{equation}
+Отсюда:
+\begin{equation}
+    С - \varepsilon_1 < g(x) < \varepsilon_2 + C
+    -\varepsilon_1 < g(x) - C < \varepsilon_2
+\end{equation}
+
+Пересечём окрестности $\varepsilon_1$ и $\varepsilon_2$ и возьмем $min(-\varepsilon_2; \varepsilon_2)$
+Тогда
+\begin{equation}
+    -\varepsilon_2 < g(x) - С < \varepsilon_2 \implies |g(x) - C| < \varepsilon_2 \implies \lim_{x \to x_0} g(x) = C
+\end{equation}
+
+\subsection*{1 замечательный предел}
+Рассмотрим предел:
+\[
+\lim_{x \to 0} \frac{\sin x}{x} = 1
+\]
+
+\textbf{Доказательство:}
+
+Рассмотрим односторонние пределы и докажем, что они равны 1. Рассмотрим случай \( x \to +0 \). Отложим этот угол на единичной окружности так, чтобы его вершина совпадала с началом координат, а одна сторона совпадала с осью \( OX \). Пусть \( A \) — точка пересечения второй стороны угла с единичной окружностью, а точка \( B \) — с касательной к этой окружности в точке \( A \). Точка \( C \) — проекция точки \( A \) на ось \( OX \). Очевидно, что:
+\[
+S_{\triangle OAC} < S_{\text{сектора } OAC} < S_{\triangle OAB}
+\]
+где \( S \) — площадь. Поскольку \( |OC| = \cos x \), \( |AC| = \sin x \), \( |AB| = \tan x \), то:
+\[
+\frac{\sin x}{2} < \frac{x}{2} < \frac{\tan x}{2}
+\]
+Так как при \( x \to +0 \): \( \sin x > 0 \), \( x > 0 \), \( \tan x > 0 \):
+\[
+\frac{1}{\tan x} < \frac{1}{x} < \frac{1}{\sin x}
+\]
+Умножаем на \( \sin x \):
+\[
+\cos x \leq \frac{\sin x}{x} \leq 1
+\]
+Переходя к пределу:
+\[
+\lim_{x \to +0} \cos x \leq \lim_{x \to +0} \frac{\sin x}{x} \leq 1
+\]
+Так как \( \lim_{x \to +0} \cos x = 1 \), то:
+\[
+\lim_{x \to +0} \frac{\sin x}{x} = 1
+\]
+
+Аналогично доказывается для \( x \to -0 \). Следовательно:
+\[
+\lim_{x \to 0} \frac{\sin x}{x} = 1
+\]
+
+\section{Билет 9}
+
+\subsection*{Предел функции на бесконечности}
+\textbf{Определение:} Число A называется пределом функции f(x) при $x \to \infty$ если
+\(
+\forall \varepsilon > 0 \exists \delta = \delta(\varepsilon) > 0 : \forall x \in Dom(f)
+\) из \( |x| > М \Rightarrow |f(x) - A| < \varepsilon \).
+
+\section{Билет 10}
+
+\subsection*{Бесконечно большие функции.}
+
+Функция \( f(x) \) называется бесконечно большой при \( x \to x_0 \), если
+\[
+\forall M > 0 \, \exists \delta > 0 \, \text{такое, что} \, 0 < |x - x_0| < \delta \Rightarrow |f(x)| > M
+\]
+
+Пример:
+Функция \( f(x) = \frac{1}{x} \) является бесконечно большой при \( x \to 0 \).
 
 \end{document}
